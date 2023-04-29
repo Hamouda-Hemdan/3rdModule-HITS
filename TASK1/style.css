@@ -1,16 +1,52 @@
 body{
     margin: 0;
-    padding: 0;
-    background-color: rgb(122, 122, 122);
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    background-color: rgb(46, 46, 46);
+    color: white;
+
 }
 
-#board{
-    width: 500px;
-    height: 500px;
-    border: 2px solid black;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+h1{
+    text-align: center;
+    color:  white;
+    font-size: 40px;
+}
+.task-container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#grid-container {
+    display: grid;
+    gap: 5px;
+    /* background-color: lightgray; */
+    padding: 5px;
+    width: 600px;
+    height: 600px;
+}
+  
+  .grid-item {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    aspect-ratio: 1/1; /* force aspect ratio of 1:1 */
+    cursor: pointer;
+}
+
+.wall {
+    background-color: black;
+}
+
+.startPoint-endPoint{
+    position: absolute;
+    left: 80%;
+    transform: translate(-80);
+}
+
+#startPoint{
+    width: 150px;
+    height: 50px;
+}
+
+#endPoint{
+    width: 150px;
+    height: 50px;
 }
