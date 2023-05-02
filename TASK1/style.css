@@ -1,7 +1,7 @@
 body{
     margin: 0;
-    background-color: rgb(76, 72, 72);
-    /* background-image: url(https://thenewcode.com/assets/images/final-starfield.png); */
+    /* background-color: rgb(76, 72, 72); */
+    background-image: url(https://thenewcode.com/assets/images/final-starfield.png);
     color: white;
 
 }
@@ -38,7 +38,8 @@ h1{
 
 
 .wall {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    
    
 }
 
@@ -68,4 +69,4 @@ h1{
   
 .end {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALsAAACRCAMAAACseTkIAAAARVBMVEUyLCT///+7ubZ2cm1gW1WjoZ3R0M6Oiobo6OeEgHySjork4+LW1dNpZF6fnZnIx8VJQzytq6dNSEFbVlB+enXCwL6Vko4h0o7SAAABOklEQVR4nO3YTU7CYBhGUSw/pVULaGH/S3UDN05MTNqcZ3zzcsrwOxxip7fYucqhynuE9wqHOnmu8lRljp2dnZ2dnZ2dnZ2dnX0f9mNsGmJLlecq1wjXCs91cqlyqvJQX3mpjxyrPFZ5jfCa/1udHKu8VMnOzs7Ozs7Ozs7Ozs6+Y/sUGx+xpcqlyvF/Tk71kZt542BnZ2dnZ2dnZ2dnZ2ffr/099vyKzVWuVV4ivFS41sm5ymeVm37jYGdnZ2dnZ2dnZ2dnZ//d/hEbvmNzlVOVtwhvFU51cq5yqLI+cjPvBOzs7Ozs7Ozs7Ozs7Oz7tc+x1xJ7VVlhlnly+duPb/qNg52dnZ2dnZ2dnZ2dnX2/9s/YeostVT6qPEZ4rPBRJ5cq1yrrIzfzxsHOzs7Ozs7Ozs7Ozs6+W/sPwU5/Oj9xTE0AAAAASUVORK5CYII=);
-}
+  }
