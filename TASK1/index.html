@@ -16,15 +16,17 @@
         <div id="board"></div> -->
         <div> 
             <label for="grid-size">Grid Size:</label>
-            <input type="number" id="grid-size" min="4" max="20">
+            <input type="number" id="grid-size" min="2" max="20">
             <button onclick="createGrid()">Create Grid</button>
             <button onclick="clearWall()">clear</button>
             <div id="grid-container"></div>
         </div>
     </div>
-    <div class="startPoint-endPoint">
-        <input type="button" id="startPoint" value="Start point">
-        <input type="button" id="endPoint" value="End point">
+    <div class="startPoint-endPoint-createWalls">
+        <button id="create-Walls"onclick="createWalls()">Create Walls</button>
+        <button id="start-btn" onclick="startSelect()">Select start point</button>
+  <button id="end-btn" onclick="endSelect()">Select end point</button>
+       
     </div>
    
 
