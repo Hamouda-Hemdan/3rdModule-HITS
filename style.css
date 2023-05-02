@@ -5,6 +5,47 @@
     
 }
 
+h2{
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background: black;
+    box-shadow: 0 0 3px black;
+    font-family: 'Kanit', sans-serif;
+    padding: 5px 100px;
+}
+
+header .element {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0 10px;
+}
+
+header img{
+    width: 64px;
+    height: 64px;
+}
+
+header .end {
+    padding: 10px;
+    display: inherit;
+    margin-left: auto;
+}
+
+header .end img {
+    width: 48px;
+    height: 48px;
+}
+
 .content{
     position: relative;
     width: 100%;
@@ -23,8 +64,6 @@ a{
     font-family: sans-serif;
     color: #a0a0a0;
     letter-spacing: 0.5px;
-
-    transition: color .2s ease-in-out;
     
 }
 
@@ -36,7 +75,7 @@ a:after{
     width: 0;
     left: 0;
     bottom: -10px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 a:hover{
@@ -48,24 +87,13 @@ a:hover::after{
 }
 
 ul{
-
     list-style: none;
-    
-    
-}
-
-header{
-
-    position: absolute;
-    top:5rem;
-    left: 16.3%;
-    
 }
 
 .tasks_list{
-    display: flex;
+    padding: 15px;
+    display:flex;
     gap: 4rem;
     font-size: 25px;
     font-weight: 700;
 }
-
