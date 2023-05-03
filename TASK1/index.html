@@ -16,7 +16,7 @@
         <div id="board"></div> -->
         <div> 
             <label for="grid-size">Grid Size:</label>
-            <input type="number" id="grid-size" min="2" max="20">
+            <input type="number" id="grid-size" min="1" max="100">
             <button onclick="createGrid()">Create Grid</button>
             <button onclick="clearWall()">clear</button>
             <div id="grid-container"></div>
@@ -25,13 +25,21 @@
     <div class="startPoint-endPoint-createWalls">
         <button id="create-Walls"onclick="createWalls()">Create Walls</button>
         <button id="start-btn" onclick="startSelect()">Select start point</button>
-  <button id="end-btn" onclick="endSelect()">Select end point</button>
+        <button id="end-btn" onclick="endSelect()">Select end point</button>
        
     </div>
-   
+    <div>
+        <div class="heuristic">
+        <button id="euclidean"onclick=""> euclidean</button>
+        <button id="manhattan" onclick=""> manhattan</button>
+    </div>
+    <div >
+    <button id="Search" onclick="">Search</button>
+   </div>
 
 
     
 </body>
 <script src="grid.js"></script>
+<script src="aStar.js"></script>
 </html>
