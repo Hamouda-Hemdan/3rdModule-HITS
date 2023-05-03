@@ -7,7 +7,7 @@
 
 }
 
-
+/* the cavnas "sketch" that we are going to draw our number in it */
 canvas {
     position: absolute;
     background-color: white;
@@ -20,7 +20,7 @@ canvas {
 
 
 
-
+/* buttons */
 .btn{
     position:relative;
     display:inline-block;
@@ -38,7 +38,7 @@ canvas {
     
 
 }
-
+/* animation for btn */
 .btn:hover{
     background-color: #734c8a;
     color: #000;
