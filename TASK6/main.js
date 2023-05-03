@@ -1,12 +1,12 @@
 var canvas;
-var painting = false;
+var Drawing = false;
 var canvas = document.querySelector("canvas");
 canvas.width = 280;
 canvas.height = 280;
 var ctx = canvas.getContext("2d");
-var PrevX = 0;
+var prevX = 0;
 var StartX = 0;
-var PrevY = 0;
+var prevY = 0;
 var StartY = 0;
 var paths = []; // recording paths
 var color = "black";
@@ -20,30 +20,28 @@ function pencil() {
 }
 
 function startPos(e) {
-    painting = true;
+    Drawing = true;
 
-    var x = e.pageX - window.innerWidth + window.innerWidth / 2 + 100;
-    var y = e.pageY - window.innerHeight + window.innerHeight / 2 + 100;
+    var x = e.pageX - window.innerWidth + window.innerWidth  + 100 ;
+    var y = e.pageY - window.innerHeight + window.innerHeight  + 100;
 
-    var i = Math.floor(x / 4) * 4;
-    var j = Math.floor(y / 4) * 4;
+    var i = Math.floor(x) * 400;
+    var j = Math.floor(y) * 400;
 
     drawRec(i, j);
 
-    console.log("pageX is at ", e.pageX);
-    console.log("canvas width is ", canvas.width);
-    console.log("user is at x= ", x, " and y= ", y);
+   
 
 }
 
 function endPos() {
-    painting = false;
+    Drawing = false;
 }
 
 //function to draw pixels (4x4 square) in canvas 
 function drawPencil(e) {
 
-    if (!painting) return;
+    if (!Drawing) return;
 
     //returns mouse position of user
     var x = e.pageX - window.innerWidth + window.innerWidth / 2 + 100;
@@ -69,6 +67,20 @@ function drawRec(x, y) {
 }
 
 
+function brush() {
+    canvas.addEventListener("mousemove", function (e) {
+        findxy('move', e)
+    }, false);
+    canvas.addEventListener("mousedown", function (e) {
+        findxy('down', e)
+    }, false);
+    canvas.addEventListener("mouseup", function (e) {
+        findxy('up', e)
+    }, false);
+    canvas.addEventListener("mouseout", function (e) {
+        findxy('out', e)
+    }, false);
+}
 
 function findxy(res, e) {
     if (res == 'down') {
@@ -86,28 +98,28 @@ function findxy(res, e) {
         //draw a circle
         ctx.beginPath();
         ctx.lineWidth = 1;
-        ctx.arc(StartX, currY, lineWidth / 2, 0, 2 * Math.PI);
+        ctx.arc(StartX, StartY, lineWidth / 2, 0, 2 * Math.PI);
         ctx.stroke();
         ctx.closePath();
         ctx.fill();
 
         paths.push([[StartX], [StartY]]);
-        painting = true;
+        Drawing = true;
     }
     if (res == 'up' || res == "out") {
-        painting = false;
+        Drawing = false;
         //console.log(paths);
     }
 
     if (res == 'move') {
-        if (painting) {
+        if (Drawing) {
             // draw a line to previous point
-            PrevX = StartX;
+            prevX = StartX;
             prevY = StartY;
             if (e.pageX != undefined && e.pageY != undefined) {
                 StartX = e.pageX - canvas.offsetLeft;
                 StartY = e.pageY - canvas.offsetTop;
-                console.log("new x is at: ", StartX, "new y us at: ", StartY);
+               
             } else {
                 StartX = e.clientX + document.body.scrollLeft
                     + document.documentElement.scrollLeft
@@ -120,7 +132,7 @@ function findxy(res, e) {
             currPath[0].push(StartX);
             currPath[1].push(StartY);
             paths[paths.length - 1] = currPath;
-            draw(ctx, color, lineWidth, PrevX, prevY, StartX, StartY);
+            draw(ctx, color, lineWidth, prevX, prevY, StartX, StartY);
         }
     }
 }
@@ -134,6 +146,6 @@ function draw(ctx, color, lineWidth, x1, y1, x2, y2) {
     ctx.lineJoin = 'round';
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.closePath();
     ctx.stroke();
+    ctx.closePath();
 }
