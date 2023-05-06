@@ -1,92 +1,100 @@
 body{
+    background-image: url(https://media.istockphoto.com/id/498478219/photo/stars-at-night-sky.jpg?b=1&s=612x612&w=0&k=20&c=JtQpCgYYSyiF63fgKDtsa8fSvVhf_QjkSN_Y0gIiICs=);
     margin: 0;
-    /* background-color: rgb(76, 72, 72); */
-    background-image: url(https://thenewcode.com/assets/images/final-starfield.png);
-    color: white;
+    padding: 0;
+}
+
+canvas {
+    position: fixed;
+    margin-top: 120px;
+    right: 400px;
 
 }
 
-h1{
+input{
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    font-size: 4vh;
+    cursor: pointer;
+    padding: 2px 8px;
+    width: 28%;
+    appearance: auto;
+    text-rendering: auto;
+    text-transform: none;
+    text-shadow: none;
+    display: inline-block;
     text-align: center;
-    color:  white;
-    font-size: 40px;
+    align-items: flex-start;
+    box-sizing: border-box;
+    font: 400 15px Arial;
 }
-.task-container {
-    position: absolute;
+
+#size {
     left: 50%;
     transform: translate(-50%);
+    bottom:85%;
 }
 
-#grid-container {
-    display: grid;
-    /* gap: 5px; */
-    /* background-color: lightgray; */
-    padding: 5px;
-    width: 700px;
-    height: 700px;
-}
-  
-.grid-item {
-    border: 1px solid rgba(239, 238, 238, 0.473);
-    aspect-ratio: 1/1; /* force aspect ratio of 1:1 */
-    cursor: pointer;
+
+#control_panel {
+    top: 30%;
+    right: 76%;
 }
 
-.wall {
-    background-color: rgb(255, 255, 255);
+#parameter_panel{
+    top: 19%;
+    right: 76%;
+}
+
+#command_panel{
+    top: 20%;
+}
+
+
+#numb{
+    width: 45px;
+}
+
+
+.number {
+    width: 2em;
+}
+
+
+.panel{
+    position: fixed;
+    padding: 20px;
+    background-color: rgba(128, 121, 121, 0.6);
+    color: #000000;
+    border-radius: 8px;
+    font-size: 25px;
     
-   
 }
 
-.startPoint-endPoint-createWalls{
-    position: absolute;
-    left: 75%;
-    transform: translate(-75);
-}
-#start-btn{
-    font-size: 15px;
-    cursor: pointer;
-    
-}
-#end-btn{
-    font-size: 15px;
-    cursor: pointer;
-}
-#create-Walls{
-    font-size: 15px;
-    cursor: pointer;
+.right_panel{
+    width: 300px;
+    right: 20px;
 }
 
-.grid-item.start {
-    background-color: red;
-}
-  
-.grid-item.end  {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALsAAACRCAMAAACseTkIAAAARVBMVEUyLCT///+7ubZ2cm1gW1WjoZ3R0M6Oiobo6OeEgHySjork4+LW1dNpZF6fnZnIx8VJQzytq6dNSEFbVlB+enXCwL6Vko4h0o7SAAABOklEQVR4nO3YTU7CYBhGUSw/pVULaGH/S3UDN05MTNqcZ3zzcsrwOxxip7fYucqhynuE9wqHOnmu8lRljp2dnZ2dnZ2dnZ2dnX0f9mNsGmJLlecq1wjXCs91cqlyqvJQX3mpjxyrPFZ5jfCa/1udHKu8VMnOzs7Ozs7Ozs7Ozs6+Y/sUGx+xpcqlyvF/Tk71kZt542BnZ2dnZ2dnZ2dnZ2ffr/099vyKzVWuVV4ivFS41sm5ymeVm37jYGdnZ2dnZ2dnZ2dnZ//d/hEbvmNzlVOVtwhvFU51cq5yqLI+cjPvBOzs7Ozs7Ozs7Ozs7Oz7tc+x1xJ7VVlhlnly+duPb/qNg52dnZ2dnZ2dnZ2dnX2/9s/YeostVT6qPEZ4rPBRJ5cq1yrrIzfzxsHOzs7Ozs7Ozs7Ozs6+W/sPwU5/Oj9xTE0AAAAASUVORK5CYII=);
-}
-
-.heuristic{
-    position: absolute;
-    left: 80%;
-    transform: translate(-75);
-    bottom: 70%;
+.header_title{
+    font-size: 150%;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-top: -10px;
 }
 
-#euclidean{
+.sub_option{
+    padding: 2px;
     font-size: 20px;
-    cursor: pointer;
+    margin-top: 2px;
+    margin-right: 30px;
+    margin-left: 30px;
+    line-height: 1.7;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#manhattan{
-    font-size: 20px;
-    cursor: pointer;
-}
-
-#Search{
-    position: absolute;
-    left: 83.5%;
-    transform: translate(-85);
-    bottom: 60%;
-    font-size: 28px;
-    cursor: pointer;
-}
