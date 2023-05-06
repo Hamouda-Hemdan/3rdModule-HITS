@@ -9,7 +9,6 @@ var StartX = 0;
 var prevY = 0;
 var StartY = 0;
 var paths = []; // recording paths
-var color = "black";
 var lineWidth = 20;
 
 
@@ -33,12 +32,13 @@ function startPos(e) {
    
 
 }
-
+// it sets the drawing state to false "when the mouse is lifted up"
 function endPos() {
     Drawing = false;
 }
 
-//function to draw pixels (4x4 square) in canvas 
+// It checks if the drawing state is true and then calculates the X and Y positions of the mouse within the canvas
+// It then passes those positions to the drawRec function
 function drawPencil(e) {
 
     if (!Drawing) return;
@@ -66,21 +66,12 @@ function drawRec(x, y) {
     ctx.fill();
 }
 
+//When res is equal to 'move', findxy checks if the drawing state is true
+// If it is, findxy sets the previous X and Y positions to the starting X and Y positions 
+// then calculates the new starting X and Y positions of the mouse within the canvas 
+//It updates the currPath variable in the paths array with the new X and Y positions 
+// then passes the previous and current X and Y positions to the draw function 
 
-function brush() {
-    canvas.addEventListener("mousemove", function (e) {
-        findxy('move', e)
-    }, false);
-    canvas.addEventListener("mousedown", function (e) {
-        findxy('down', e)
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
-        findxy('up', e)
-    }, false);
-    canvas.addEventListener("mouseout", function (e) {
-        findxy('out', e)
-    }, false);
-}
 
 function findxy(res, e) {
     if (res == 'down') {
@@ -108,7 +99,6 @@ function findxy(res, e) {
     }
     if (res == 'up' || res == "out") {
         Drawing = false;
-        //console.log(paths);
     }
 
     if (res == 'move') {
@@ -132,15 +122,14 @@ function findxy(res, e) {
             currPath[0].push(StartX);
             currPath[1].push(StartY);
             paths[paths.length - 1] = currPath;
-            draw(ctx, color, lineWidth, prevX, prevY, StartX, StartY);
+            draw(ctx, lineWidth, prevX, prevY, StartX, StartY);
         }
     }
 }
 
 // draws a line from (x1, y1) to (x2, y2) with nice rounded caps
-function draw(ctx, color, lineWidth, x1, y1, x2, y2) {
+function draw(ctx, lineWidth, x1, y1, x2, y2) {
     ctx.beginPath();
-    ctx.strokeStyle = color;
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -149,3 +138,4 @@ function draw(ctx, color, lineWidth, x1, y1, x2, y2) {
     ctx.stroke();
     ctx.closePath();
 }
+
