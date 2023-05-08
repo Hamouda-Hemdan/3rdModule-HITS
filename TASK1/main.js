@@ -345,5 +345,5 @@ function search() {
         y: endy
     }
 
-   //aStar(ar, src, dest);
+   aStar(ar, src, dest);
 }
