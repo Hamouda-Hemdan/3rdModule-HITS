@@ -31,7 +31,7 @@ function startDBSCAN() {
         DBSCAN(deepCopy(data_points));
         enableButtons();
     } else {
-        alert("Сначала нарисуйте хотя бы одну точку на плоскости")
+        alert("Draw at least one point in the cluster")
     }
 }
 
@@ -74,7 +74,7 @@ function DBSCAN(points) {
     }
 
     if (!checkingOnChange(points)) {
-        alert('Не удалось распределить точки в кластеры');
+        alert('Failed to allocate points to clusters');
     }
 }
 

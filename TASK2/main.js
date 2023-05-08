@@ -62,7 +62,7 @@ document.getElementById('show_old_points').addEventListener('click', (e) => {
 document.getElementById('clear').addEventListener('click', () => { window.location.reload() });
 
 
-document.getElementById('canvas').addEventListener('mousedown', startDrawing); //для добавления точек при удерживании правой мыши
+document.getElementById('canvas').addEventListener('mousedown', startDrawing); //To add points while pressing right click
 document.getElementById('canvas').addEventListener('mouseup', stopDrawing);
 document.getElementById('canvas').addEventListener('mouseleave', stopDrawing);
 

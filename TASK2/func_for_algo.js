@@ -11,13 +11,13 @@ export {
 
 function checkingOnError(count_clusters) {
     if ((count_clusters > LIMIT_CLUSTERS)) {
-        alert("Превышен лимит кластеров");
+        alert("Cluster limit exceeded");
         return true;
     } else if ((count_clusters <= 0) || (count_clusters == NaN)) {
-        alert("Количество кластеров указано неверно");
+        alert("The number of clusters are incorrect");
         return true;
     } else if (data_points.length < count_clusters) {
-        alert("Вы ввели кол-во групп больше, чем точек. Добавьте точки или измените кол-во кластеров");
+        alert("You hace entered more groups than points. Add more points or change the number of clusters");
         return true;
     } else {
         return false;

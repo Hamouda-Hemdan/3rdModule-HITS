@@ -12,7 +12,7 @@ class Point {
         this.x = x;
         this.y = y;
         this.cluster = cluster;
-        this.core = false; //определение главной или шумовой точки (DBSCAN)
+        this.core = false; //Definition of the main or noise point (DBSCAN)
     }
 
     draw() {

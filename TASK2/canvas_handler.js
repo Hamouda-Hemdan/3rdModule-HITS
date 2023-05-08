@@ -87,12 +87,12 @@ function getIndexPoint(x, y) {
 
     if (index != -1) {
         if (calculateDistance(data_points[index].x, data_points[index].y, x, y) < POINT_RADIUS) {
-            return index; //попали по вершине
+            return index; //hit the top
         } else {
-            return -1; //не попали по вершине
+            return -1; //doesnt ^
         }
     } else {
-        // пользователь не добавил ни одной вершины, но пытается что-то выбрать (наверное)
+        // The user didnt add any vertex
         return -1;
     }
 }
