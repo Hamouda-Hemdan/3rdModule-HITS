@@ -98,3 +98,15 @@ button {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+.next{
+    position: absolute;
+    left: 88%;
+    bottom: 90%;
+    font-size: 30px;
+    width: 140px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(124, 119, 119);
+    border-radius: 0 100% 100% 0;
+}
