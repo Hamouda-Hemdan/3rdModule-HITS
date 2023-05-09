@@ -12,10 +12,17 @@
 <body>
     <canvas id="canvas"></canvas>
         <button class = "btn" id = "pencil" onclick="pencil()">Pencil</button>
-        <button class = "btn" id="clear" onclick="clearCanvas()">Clear</button>
-        <button class = "btn" id="recognize" onclick="recognize()">Recognize</button>
+        <button class = "btn" id = "brush" onclick="brush()">Brush</button>
+        <button class = "btn" id = "clear" onclick="clearCanvas()">Clear</button>
+        <button class = "btn" id = "recognize" onclick="recognize()">Recognize</button>
+        <div id="Geussing">
+            Estimated number
+            <div id="number"></div>
+        </div>
         <script src="main.js"></script>
-        
+        <script src="NN.js"></script>
+        <script src="bias.js"></script>
+
 </body>
 
 </html>
