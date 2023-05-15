@@ -4,11 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decision Tree</title>
+    <title>DecisionTree</title>
     <link rel="icon" type="image/png" href="../img/LogoIT.png">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Decision Tree</h1>
-    
+    <div class = "TreeGround">
+    <header> 
+        <div class="element">
+            <img src="../img/LogoIT.png" alt="">
+        </div>
+        <div class="element">
+                <h2>Higher IT School</h2>
+            </div>
+                <div class="tasks">
+                    <ul class="tasks_list"> 
+                        <li><a href="..\TASK1\index.html">A*</a></li>
+                        <!-- A* -->
+                        <li><a href="..\TASK2\index.html">Clusterization</a></li>
+                        <!-- Clusterization -->
+                        <li><a href="..\TASK3\index.html">Genetic</a></li>
+                        <!-- Genetic algorithm -->
+                        <li><a href="..\TASK4\index.html">Ant</a></li>
+                        <!-- Ant algorithm -->
+                        <li><a href="..\TASK5\index.html">Decision Tree</a></li>
+                        <!-- Decision Tree -->
+                        <li><a href="..\TASK6\index.html">Neural network</a></li>
+                        <!-- Neural network -->
+                    </ul>
+                </div>
+        <nav class="end">
+            <a class="element" href="https://github.com/modyy321/3rdModule-HITS" target="_blank">
+                <img src="../img/GitHub64px.png" alt="">
+            </a>
+        </nav>
+    </header>
+    <div class="wrapper" id="wrapper">
+        <div class="toolbar">
+            <input class ="button" type="button" id="getFile_button" value="Build Tree">
+            <input class ="button" type="button" id="start_button" value="Run Bypass">
+            <input class ="button" type="button" id="reset_button" value="Reset">
+            <input id="file_input" type="file">
+            <label class="label" for='file_input'>Insert File</label>
+            <textarea id="input_data" name="input_data" cols="40" rows="18"></textarea></p>
+        </div>
+        <div class="canvas">
+            <div class="tree" id="tree">
+                <ul id="root">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="./ParserCSV.js"></script>
+    <script src="./DecisionTree.js"></script>
+    <script src="./Data_tree.js"></script>
+    <script src="./Interface.js"></script>
 </body>
 </html>
