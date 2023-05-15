@@ -64,18 +64,6 @@ header .end img {
     height: 48px;
 }
 
-.content{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: #111;
-    color: #fff;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(/img/marcin-jozwiak-Jmsw8wYy7Ig-unsplash.jpg);
- }
-
 a{
     position: relative;
     text-decoration: none;
