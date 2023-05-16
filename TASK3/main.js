@@ -1,8 +1,14 @@
+//this file cont the grid function
+//city point function
+//clear cities point function
+// run function
+
+
 window.onload = function() {
   var grid = document.getElementById('grid');
   var addPointButton = document.getElementById('addCity');
   var clearPointsButton = document.getElementById('clearCities');
-  var startButton = document.getElementById('Start'); // Updated ID
+  var startButton = document.getElementById('Start'); 
 
   var isAddingPoint = false;
 
