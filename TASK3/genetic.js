@@ -173,7 +173,7 @@ function runGA() {
   initializeGA();
 
   // Start the animation
-  setTimeout(runIteration, 10);
+  setTimeout(runIteration, 1);
 }
 
 // Define the function to clear the canvas and redraw the cities
@@ -210,6 +210,7 @@ function addCity(event) {
   clearCanvas();
 }
 
+
 // Add an event listener to the canvas to allow the user to add cities
 canvas.addEventListener("click", addCity);
 
@@ -217,7 +218,7 @@ canvas.addEventListener("click", addCity);
 const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", runGA);
 
-// Add an event listener to the reset button to clear the canvas
+// Add an event listener to the reset path button to clear the canvas
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", clearCanvas);
 
