@@ -103,7 +103,6 @@ function createRandomTour() {
   return tour;
 }
 
-// ...
 
 // Shuffle an array using Fisher-Yates algorithm
 function shuffleArray(array) {
@@ -162,7 +161,6 @@ function swapCities(tour, indexA, indexB) {
   tour[indexB] = temp;
 }
 
-// ...
 
 // Display the best tour on the grid
 function displayTour(tour) {
@@ -209,9 +207,6 @@ function calculateAngle(cityA, cityB) {
   return 'rotate(' + angle + 'rad)';
 }
 
-// ...
-
-
 
 // Add a city to the grid with the specified color
 function addCityToGrid(x, y, color) {
@@ -242,7 +237,3 @@ function initializeCities() {
     cities.push(city);
   }
 }
-
-// ...
-
-// Run the genetic algorithm
