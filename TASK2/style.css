@@ -17,6 +17,8 @@ html {
     background: #111;
     color: #fff;
     overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(/img/Cluster.Background.jpg);
