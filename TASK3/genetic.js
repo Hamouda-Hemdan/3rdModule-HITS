@@ -111,7 +111,7 @@ function initializeGA() {
 
   // Update the distance label
   const distanceLabel = document.getElementById("distance-label");
-  distanceLabel.innerText = `Distance: ${bestFitness.toFixed(2)}`;
+  distanceLabel.innerText = `Distance: ${bestFitness.toFixed(2) * 10} KM`;
 }
 
 // Define the function to run the genetic algorithm for one iteration
@@ -155,7 +155,7 @@ function runIteration() {
 
   // Update the distance label
   const distanceLabel = document.getElementById("distance-label");
-  distanceLabel.innerText = `Distance: ${bestFitness.toFixed(2)}`;
+  distanceLabel.innerText = `Distance: ${bestFitness.toFixed(2) * 10 } KM`;
 
   // Update the iteration counter
   iteration++;
@@ -185,7 +185,7 @@ function clearCanvas() {
   bestSolution = null;
   bestFitness = null;
   const distanceLabel = document.getElementById("distance-label");
-  distanceLabel.innerText = "Distance: N/A";
+  distanceLabel.innerText = "Distance: in KM" ;
 }
 
 // Define the function to draw the cities on the canvas
