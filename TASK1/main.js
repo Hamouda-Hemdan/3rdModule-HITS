@@ -87,7 +87,7 @@ function addWalls() {
 function startPos(e) {
     painting = true;
 
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
     var y = e.pageY - 145;
 
     console.log("pageX is at ", e.pageX);
@@ -138,7 +138,7 @@ function clickwalls(e) {
     if (!painting) return;
 
     //returns mouse position of user
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
     var y = e.pageY - 145;
 
     for (var i = 0; i < n; i++) {
@@ -186,7 +186,7 @@ function addStart() {
 //function that adds start position on canvas
 function clickStart(e) {
     //returns mouse position of user
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
     var y = e.pageY - 145;
 
     //searching for correspondant cell that user clicked
@@ -261,7 +261,7 @@ function addEnd() {
 //function that adds end position on canvas
 function clickEnd(e) {
     //returns mouse position of user
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
     var y = e.pageY - 145;
 
     //searching for correspondant cell that user clicked
