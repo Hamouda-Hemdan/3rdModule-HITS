@@ -1,0 +1,42 @@
+canvas {
+   
+    background-color: #F7F7F7;
+}
+*{
+    background-color: #393E46;
+}
+.control{
+    
+    background-color: #393E46;
+    color: black;
+    border: 4px;
+    box-sizing: 4px;
+    display: flex;
+    flex-direction: column;
+    border-right: 24%;
+    
+
+
+}
+.number{
+    background-color: #F2E7D5;
+    background: #F2E7D5;
+    color: #F2E7D5;
+}
+.btn{
+    position:relative;
+    display:inline-block;
+    padding: 25px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #6D9886;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.5s;
+    overflow: hidden;
+    margin-right: 50 px;
+    border: black;
+
+
+
+}
