@@ -9,8 +9,8 @@ let numAnts = 10;
 let numIterations;
 let evaporationRate = 0.5;
 let pheromoneMatrix = [];
-let alpha = 1;
-let beta = 2;
+let Alpha = 1;
+let Beta = 2;
 let q = 100;
 let initialPheromone = 5;
 let distances;
@@ -38,7 +38,7 @@ function handleMouseDown(event) {
 }
 
 // Calculate distance between two points
-function calcDist(point1, point2) {
+function DistanceCalculation(point1, point2) {
   const dx = point2[0] - point1[0];
   const dy = point2[1] - point1[1];
   return Math.sqrt(dx * dx + dy * dy);
@@ -51,7 +51,7 @@ function createGraph(dots) {
   for (let i = 0; i < n; i++) {
     const arr = [];
     for (let j = 0; j < n; j++) {
-      arr.push(calcDist(dots[i], dots[j]));
+      arr.push(DistanceCalculation(dots[i], dots[j]));
     }
     graph.push(arr);
   }
@@ -59,7 +59,7 @@ function createGraph(dots) {
 }
 
 // Ant Colony Optimization algorithm for TSP
-async function antColonyOptimizationTSP(distanceMatrix, numAnts, numIterations, evaporationRate, alpha, beta, q) {
+async function ACO(distanceMatrix, numAnts, numIterations, evaporationRate, Alpha, Beta, q) {
   // Initialize pheromone matrix with a constant value
   pheromoneMatrix = [];
   const initialPheromone = 1 / (distanceMatrix.length * numAnts);
@@ -98,7 +98,7 @@ async function antColonyOptimizationTSP(distanceMatrix, numAnts, numIterations, 
         let denominator = 0;
         for (let j = 0; j < distanceMatrix.length; j++) {
           if (!visited.has(j)) {
-            const numerator = Math.pow(pheromoneMatrix[current][j], alpha) * Math.pow(1 / distanceMatrix[current][j], beta);
+            const numerator = Math.pow(pheromoneMatrix[current][j], Alpha) * Math.pow(1 / distanceMatrix[current][j], Beta);
             denominator += numerator;
             probabilities.push(numerator);
           } else {
@@ -209,12 +209,12 @@ function drawPath(path, isBestRoute = false) {
 async function startOptimization() {
   // Get the number of iterations from the input field
   numIterations = parseInt(document.getElementById('numIterations').value);
-  beta = parseInt(document.getElementById('beta').value);
-  alpha = parseInt(document.getElementById('alpha').value);
+  Beta = parseInt(document.getElementById('Beta').value);
+  Alpha = parseInt(document.getElementById('Alpha').value);
 
   // Check that there are at least two points
   if (points.length < 2) {
-    alert('Please add at least two points.');
+    alert('Add at least TWO points.');
     return;
   }
 
@@ -226,7 +226,7 @@ async function startOptimization() {
 
   for (let iteration = 1; iteration <= numIterations; iteration++) {
     // Run the ant colony optimization algorithm for the current iteration
-    const [currentBestTour, currentBestTourLength] = await antColonyOptimizationTSP(distances, numAnts, 1, evaporationRate, alpha, beta, q);
+    const [currentBestTour, currentBestTourLength] = await ACO(distances, numAnts, 1, evaporationRate, Alpha, Beta, q);
 
     // Update the best tour if a shorter tour is found
     if (currentBestTourLength < bestTourLength) {
