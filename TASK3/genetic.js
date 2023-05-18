@@ -173,7 +173,7 @@ function runGA() {
   initializeGA();
 
   // Start the animation
-  setTimeout(runIteration, 1);
+  setTimeout(runIteration, 10);
 }
 
 // Define the function to clear the canvas and redraw the cities
