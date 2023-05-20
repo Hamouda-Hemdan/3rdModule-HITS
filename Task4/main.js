@@ -1,8 +1,8 @@
 // Get canvas element and context
-const canvas = document.getElementById('canvas');
-canvas.width = 1200;
-canvas.height = 700;
-const context = canvas.getContext('2d');
+let canvas = document.getElementById('canvas');
+canvas.width = 1000;
+canvas.height = 600;
+let context = canvas.getContext('2d');
 
 // Set up variables for the algorithm
 let numAnts = 10;
@@ -22,15 +22,15 @@ canvas.addEventListener('mousedown', handleMouseDown);
 // Handle mousedown event - adds a point to the canvas and to the points array
 function handleMouseDown(event) {
   // Get canvas position within window
-  const rect = canvas.getBoundingClientRect();
+  let rect = canvas.getBoundingClientRect();
   // Calculate mouse position relative to canvas
-  const x = event.clientX - rect.left;
+  let x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
   // Adjust for canvas width and height
   const canvasX = x * (canvas.width / rect.width);
   const canvasY = y * (canvas.height / rect.height);
   // Add point to the canvas and the points array
-  context.fillStyle = 'red';
+  context.fillStyle = 'black';
   context.beginPath();
   context.arc(canvasX, canvasY, 5, 0, Math.PI * 2);
   context.fill();
@@ -181,10 +181,10 @@ function drawPath(path, isBestRoute = false) {
   context.strokeStyle = 'rgba(0, 100, 100, 0.5)';
   context.lineWidth = 4;
   for (let i = 0; i < path.length - 1; i++) {
-    const startX = points[path[i]][0];
-    const startY = points[path[i]][1];
-    const endX = points[path[i + 1]][0];
-    const endY = points[path[i + 1]][1];
+    let startX = points[path[i]][0];
+    let startY = points[path[i]][1];
+    let endX = points[path[i + 1]][0];
+    let endY = points[path[i + 1]][1];
     context.beginPath();
     context.moveTo(startX, startY);
     context.lineTo(endX, endY);
@@ -245,8 +245,7 @@ async function startOptimization() {
   // Draw the best route with color blue
   drawPath(bestTour, true);
 
-  // Alert the user with the best route length
-  alert(`The best route length is ${bestTourLength}`);
+ document.getElementById("distance-label").innerHTML = bestTourLength;
 }
 
 // Handle button click event - clears the canvas and the points array
