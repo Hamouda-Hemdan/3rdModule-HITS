@@ -30,7 +30,8 @@ h2{
 header{
     display: flex;
     flex-direction: row;
-    background: rgb(90, 89, 89);
+/*     background: rgb(90, 89, 89); */
+    background: black;
     box-shadow: 0 0 3px black;
     font-family: 'Kanit', sans-serif;
     padding: 5px 100px;
