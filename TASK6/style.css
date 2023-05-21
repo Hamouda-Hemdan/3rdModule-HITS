@@ -84,7 +84,7 @@ a:after{
 }
 
 a:hover{
-    color: #fff;
+    color: #0ff308;
 }
 
 a:hover::after{
