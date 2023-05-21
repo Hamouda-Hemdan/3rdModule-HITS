@@ -44,6 +44,7 @@
     <button onclick="addWalls()">Add .Walls</button>
     <button onclick="addStart()">Add Start Point</button>
     <button onclick="addEnd()">Add End Point</button>
+    <button id="MazeGeneration" onclick="generatePrimMaze()">Generate Maze</button>
 </div>
 <div id="control_panel" class="panel right_panel">
     <button id="startSearch" onclick="search()" disabled="disabled">START SEARCH</button>
@@ -54,6 +55,7 @@
 <script src="aStar.js"></script>
 <script src="path.js"></script>
 <script src="view.js"></script>
+<script src="mazealg.js"></script>
 </br>
 <canvas></canvas>
 </body>
