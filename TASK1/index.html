@@ -38,11 +38,6 @@
             </nav>
         </header>
     
-<!--     <div class="Next-button">
-        <a href="..\TASK2\index.html">
-            <button class="next">Next>></button>
-        </a>
-    </div> -->
 <div id="size" class="panel">
     
     Enter size of n=<input type="number" id="numb" min="2" max="100" />
@@ -50,8 +45,8 @@
 </div>
 
 <div id="command_panel" class="panel right_panel">
-    <header>
-        <h3>Heuristic</h3>
+    <header class = "header1">
+        <h3 class="header2">Heuristic</h3>
     </header>
     <div class="sub_option">
         <input type="radio" name="astar_heuristic" id="manhattan" checked>
@@ -73,14 +68,14 @@
     </div>
 </div>
 <div id="parameter_panel" class="panel right_panel">
-    <button onclick="addWalls()">Add .Walls</button>
+    <button onclick="addWalls()">Add Walls Plz</button>
     <button onclick="addStart()">Add Start Point</button>
     <button onclick="addEnd()">Add End Point</button>
     <button id="MazeGeneration" onclick="generatePrimMaze()">Generate Maze</button>
 </div>
 <div id="control_panel" class="panel right_panel">
     <button id="startSearch" onclick="search()" disabled="disabled">START SEARCH</button>
-    <button id="clearPath" onclick="clearPath()" disabled="disabled">Clear Path</button>
+    <button id="clearPath" onclick="clearPath()" disabled="disabled">Clear ALL Path</button>
     <button onclick="clearWalls()">Clear All Walls</button>
 </div>
 <script src="main.js"></script>
