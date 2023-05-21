@@ -13,6 +13,10 @@ h2{
     cursor: pointer;
 }
 
+h3{
+    color: white;
+}
+
 header{
     display: flex;
     flex-direction: row;
