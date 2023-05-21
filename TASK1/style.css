@@ -1,6 +1,5 @@
 *{
     margin: 0;
-    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -62,7 +61,7 @@ a{
 a:after{
     content: "";
     position: absolute;
-    background-color: #ff3c78;
+    background-color: rgb(252, 248, 5);
     height: 3px;
     width: 0;
     left: 0;
@@ -110,10 +109,10 @@ button {
     border: none;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
-    font-size: 4vh;
+    font-size: 3vh;
     cursor: pointer;
     padding: 2px 8px;
-    width: 28%;
+    width: 40%;
     appearance: auto;
     text-rendering: auto;
     text-transform: none;
@@ -124,26 +123,33 @@ button {
     box-sizing: border-box;
     font: 400 15px Arial;
 }
+.header1{
+    background-color: transparent ;
+}
+.header2{
+    color: black;
+}
 
 #size {
-    left: 50%;
-    transform: translate(-50%);
-    bottom:85%;
+    left: 53%;
+    transform: translate(-53%);
+    bottom:76%;
 }
 
 
 #control_panel {
-    top: 35%;
-    right: 76%;
+    top: 45%;
+    right: 70%;
 }
 
 #parameter_panel{
-    top: 19%;
-    right: 76%;
+    top: 28%;
+    right: 70%;
 }
 
 #command_panel{
-    top: 19%;
+    top: 28%;
+    left:75%
 }
 
 
@@ -181,7 +187,7 @@ button {
 
 .sub_option{
     padding: 2px;
-    font-size: 20px;
+    font-size: 19px;
     margin-top: 2px;
     margin-right: 30px;
     margin-left: 30px;
@@ -189,15 +195,3 @@ button {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.next{
-    position: absolute;
-    left: 88%;
-    bottom: 90%;
-    font-size: 30px;
-    width: 140px;
-    height: 40px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(124, 119, 119);
-    border-radius: 0 100% 100% 0;
-}
