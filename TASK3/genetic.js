@@ -1,4 +1,4 @@
-// Define the cities in the TSP problem
+// Define the cities array
 let cities = [];
 
 // Define the canvas and context variables
@@ -6,15 +6,18 @@ const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
 // Define the genetic algorithm parameters
-let populationSize = parseInt(document.getElementById("population-size").value);
-let mutationRate = parseFloat(document.getElementById("mutation-rate").value);
-let iterationLimit = parseInt(document.getElementById("iteration-limit").value);
+let populationSize = 100;
+let mutationRate = 0.02;
+let iterationLimit = 1000;
 
 // Define the genetic algorithm variables
 let population;
 let bestSolution;
 let bestFitness;
 let iteration;
+let iterationInterval;
+
+
 
 // Define the fitness function for a TSP solution
 function fitness(solution) {
@@ -56,9 +59,9 @@ function tournamentSelection(population, size) {
 
 // Define the crossover operator for two TSP solutions
 function crossover(parent1, parent2) {
-  const child = Array.from({length: parent1.length});
-  let startPos = Math.floor(Math.random() * parent1.length);
-  let endPos = Math.floor(Math.random() * (parent1.length - startPos)) + startPos;
+  const child = Array.from({ length: parent1.length });
+  const startPos = Math.floor(Math.random() * parent1.length);
+  const endPos = Math.floor(Math.random() * (parent1.length - startPos)) + startPos;
   for (let i = startPos; i <= endPos; i++) {
     child[i] = parent1[i];
   }
@@ -74,158 +77,112 @@ function crossover(parent1, parent2) {
   return child;
 }
 
-// Define the function to draw a path on the canvas
-function drawPath(path, color) {
-  context.strokeStyle = color;
-  context.beginPath();
-  context.moveTo(path[0].x, path[0].y);
-  for (let i = 1; i < path.length; i++) {
-    context.lineTo(path[i].x, path[i].y);
-  }
-  context.closePath();
-  context.stroke();
-}
-
-// Define the function to initialize the genetic algorithm
+// Define the initialization function for the genetic algorithm
 function initializeGA() {
-  // Initialize the population
-  population = Array.from({length: populationSize}, () => {
-    const solution = Array.from(cities);
-    mutate(solution);
-    return solution;
-  });
+  clearInterval(iterationInterval);
 
-  // Evaluate the initial population
-  bestSolution = population[0];
-  bestFitness = fitness(bestSolution);
-  for (const solution of population) {
-    const solutionFitness = fitness(solution);
-    if (solutionFitness < bestFitness) {
-      bestSolution = solution;
-      bestFitness = solutionFitness;
-    }
+  if (cities.length < 2) {
+    alert("Please add at least 2 cities.");
+    return;
   }
 
-  // Draw the initial best solution
-  drawPath(bestSolution, "line");
+  population = [];
+  for (let i = 0; i < populationSize; i++) {
+    const path = [...cities];
+    for (let j = 0; j < path.length; j++) {
+      const k = Math.floor(Math.random() * path.length);
+      const temp = path[j];
+      path[j] = path[k];
+      path[k] = temp;
+    }
+    population.push(path);
+  }
 
-  // Update the distance label
-  const distanceLabel = document.getElementById("distance-label");
-  distanceLabel.innerText = `Distance: ${bestFitness.toFixed(2) * 10} KM`;
+  bestSolution = null;
+  bestFitness = Infinity;
+  iteration = 0;
+
+  iterationInterval = setInterval(iterateGA, 1);
 }
 
-// Define the function to run the genetic algorithm for one iteration
-function runIteration() {
-  // Select two parents using tournament selection
+// Define the main iteration function for the genetic algorithm
+function iterateGA() {
+  if (iteration >= iterationLimit) {
+    clearInterval(iterationInterval);
+    return;
+  }
+
   const parent1 = tournamentSelection(population, 5);
   const parent2 = tournamentSelection(population, 5);
-
-  // Create a new child using crossover
   const child = crossover(parent1, parent2);
-
-  // Mutate the child
   mutate(child);
 
-  // Replace the worst solution in the population with the child
-  let worstSolution = population[0];
-  let worstFitness = fitness(worstSolution);
-  for (const solution of population) {
-    const solutionFitness = fitness(solution);
-    if (solutionFitness > worstFitness) {
-      worstSolution = solution;
-      worstFitness = solutionFitness;
-    }
-  }
-  const worstIndex = population.indexOf(worstSolution);
+  const worstIndex = population.findIndex((path) => fitness(path) === Math.max(...population.map(fitness)));
   population[worstIndex] = child;
 
-  // Update the best solution if necessary
   const childFitness = fitness(child);
   if (childFitness < bestFitness) {
     bestSolution = child;
     bestFitness = childFitness;
+    drawBestSolution();
   }
 
-  // Clear the canvas and redraw the cities
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  drawCities();
-
-  // Draw the current best solution
-  drawPath(bestSolution, "line");
-
-  // Update the distance label
-  const distanceLabel = document.getElementById("distance-label");
-  distanceLabel.innerText = `Distance: ${bestFitness.toFixed(2) * 10 } KM`;
-
-  // Update the iteration counter
   iteration++;
-
-  // If the iteration limit has not been reached, run the next iteration after a delay
-  if (iteration < iterationLimit) {
-    setTimeout(runIteration, 20);
-  }
 }
 
-// Define the function to run the genetic algorithm until convergence
-function runGA() {
-  // Initialize the genetic algorithm
-  iteration = 0;
-  initializeGA();
-
-  // Start the animation
-  setTimeout(runIteration, 10);
-}
-
-// Define the function to clear the canvas and redraw the cities
+// Define the function to clear the canvas and draw the cities
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   drawCities();
-
-  // Reset the best solution and distance label
-  bestSolution = null;
-  bestFitness = null;
-  const distanceLabel = document.getElementById("distance-label");
-  distanceLabel.innerText = "Distance: in KM" ;
 }
 
 // Define the function to draw the cities on the canvas
 function drawCities() {
-  const canvasRect = canvas.getBoundingClientRect();
   for (const city of cities) {
-    const cityElement = document.createElement("div");
-    cityElement.classList.add("point");
-    cityElement.style.left = `${canvasRect.left + city.x - 5}px`;
-    cityElement.style.top = `${canvasRect.top + city.y - 5}px`;
-    document.body.appendChild(cityElement);
+    context.beginPath();
+    context.arc(city.x, city.y, 3, 0, 2 * Math.PI);
+    context.fillStyle = "#000000";
+    context.fill();
+    context.closePath();
   }
 }
 
+// Define the function to draw the best solution path on the canvas
+function drawBestSolution() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  drawCities();
 
-// Define the function to add a city to the canvas
+  context.beginPath();
+  context.moveTo(bestSolution[0].x, bestSolution[0].y);
+  for (let i = 1; i < bestSolution.length; i++) {
+    const city = bestSolution[i];
+    context.lineTo(city.x, city.y);
+  }
+  context.strokeStyle = "#2e88db";
+  context.lineWidth = 2;
+  context.stroke();
+  context.closePath();
+}
+
+// Define the function to handle the click event on the canvas
 function addCity(event) {
   const rect = canvas.getBoundingClientRect();
   const x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
-  cities.push({x, y});
-  clearCanvas();
+  cities.push({ x, y });
+  drawCities();
 }
 
+// Define the function to clear the cities
+function clearCities() {
+  cities = [];
+  clearCanvas();
+  clearInterval(iterationInterval);
+  bestSolution = null;
+  bestFitness = Infinity;
+}
 
-// Add an event listener to the canvas to allow the user to add cities
+// Add event listeners
 canvas.addEventListener("click", addCity);
-
-// Add an event listener to the start button to run the genetic algorithm
-const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", runGA);
-
-// Add an event listener to the reset path button to clear the canvas
-const resetButton = document.getElementById("reset-button");
-resetButton.addEventListener("click", clearCanvas);
-
-// Add event listeners to the parameter inputs to update the genetic algorithm parameters
-const populationSizeInput = document.getElementById("population-size");
-populationSizeInput.addEventListener("input", () => populationSize = parseInt(populationSizeInput.value));
-const mutationRateInput = document.getElementById("mutation-rate");
-mutationRateInput.addEventListener("input", () => mutationRate = parseFloat(mutationRateInput.value));
-const iterationLimitInput = document.getElementById("iteration-limit");
-iterationLimitInput.addEventListener("input", () => iterationLimit = parseInt(iterationLimitInput.value));
+document.getElementById("start-button").addEventListener("click", initializeGA);
+document.getElementById("clear-button").addEventListener("click", clearCities);
