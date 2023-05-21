@@ -1,3 +1,94 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h2{
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h3{
+    color: white;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background: black;
+    box-shadow: 0 0 3px black;
+    font-family: 'Kanit', sans-serif;
+    padding: 5px 100px;
+}
+
+header .element {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0 10px;
+}
+
+header img{
+    width: 64px;
+    height: 64px;
+}
+
+header .end {
+    padding: 10px;
+    display: inherit;
+    margin-left: auto;
+}
+
+header .end img {
+    width: 48px;
+    height: 48px;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #a0a0a0;
+    letter-spacing: 0.5px;
+    
+}
+
+a:after{
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover{
+    color: #fff;
+}
+
+a:hover::after{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+.tasks_list{
+    padding: 15px;
+    display:flex;
+    gap: 4rem;
+    font-size: 25px;
+    font-weight: 700;
+}
 body{
     background-image: url(https://media.istockphoto.com/id/498478219/photo/stars-at-night-sky.jpg?b=1&s=612x612&w=0&k=20&c=JtQpCgYYSyiF63fgKDtsa8fSvVhf_QjkSN_Y0gIiICs=);
     margin: 0;
