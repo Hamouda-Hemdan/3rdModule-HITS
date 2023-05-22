@@ -3,7 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
-/* To make all the pages the same header */
+
 .header{
     position: relative;
     width: 100%;
@@ -37,7 +37,7 @@ header{
     box-shadow: 0 0 3px black;
     font-family: 'Kanit', sans-serif;
     padding: 5px 100px;
-/*     height: 110px; */
+    /* height: 110px; */
 }
 
 header .element {
