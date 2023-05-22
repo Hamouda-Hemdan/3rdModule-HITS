@@ -158,7 +158,7 @@ function drawBestSolution() {
     const city = bestSolution[i];
     context.lineTo(city.x, city.y);
   }
-  context.strokeStyle = "#2e88db";
+  context.strokeStyle = "black";
   context.lineWidth = 2;
   context.stroke();
   context.closePath();
