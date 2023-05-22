@@ -15,6 +15,8 @@ h2{
 }
 
 header{
+    justify-content: space-between;
+    align-items: center;
     display: flex;
     flex-direction: row;
     background: black;
@@ -54,6 +56,8 @@ header .end img {
     background: #111;
     color: #fff;
     overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(/img/marcin-jozwiak-Jmsw8wYy7Ig-unsplash.jpg);
@@ -97,4 +101,18 @@ ul{
     gap: 4rem;
     font-size: 25px;
     font-weight: 700;
+}
+
+@media (max-width: 980px){
+    header img{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        padding: 0px;
+        display:block;
+    }
+    header .end {
+        display: none;
+    }
 }
