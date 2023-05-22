@@ -81,7 +81,7 @@ a{
 a:after{
   content: "";
   position: absolute;
-  background-color: #ffffff;
+  background-color: #ff3c78;
   height: 3px;
   width: 0;
   left: 0;
@@ -90,9 +90,7 @@ a:after{
 }
 
 a:hover{
-  background: radial-gradient(ellipse at bottom, #607894 0%, #6c78b8 100%); 
-    -webkit-background-clip: text;
-    color: transparent;
+  color: #fff;
 }
 
 a:hover::after{
