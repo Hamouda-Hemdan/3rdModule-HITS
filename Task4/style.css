@@ -105,7 +105,6 @@ ul{
     font-size: 25px;
     font-weight: 700;
 }
-<<<<<<< HEAD
 .top-right-list {
     position: absolute;
     top: 15%;
@@ -134,28 +133,6 @@ ul{
   }
   
 
-=======
-.information{
-    position: relative;
-    flex-direction: column;
-    line-height: 12px;
-    padding-left: 5%;
-    font-size: 8pt;
-    font-family: tahoma;
-    top: 14px;;
-    right:0;
-    color: black;
-  
-
-
-}
-
-#distance-label{
-  padding-left: 12px;
-    color: white;
-    background: none;
-}
->>>>>>> 6bc186efb36d0aa064a6bf07f673eaedc09dbb80
 .btn{
     position: relative;
     height: 11%;
@@ -167,24 +144,12 @@ ul{
     padding: 25px 30px;
     text-transform: uppercase;
     letter-spacing: 4px;
-<<<<<<< HEAD
     color: #918b8b;
     font-size: 1.2rem;
-=======
-    color: #6D9886;
-    font-size: 1.5rem;
->>>>>>> 6bc186efb36d0aa064a6bf07f673eaedc09dbb80
     font-weight: bold;
     border: black;
-<<<<<<< HEAD
     cursor: pointer;
     border-radius: 20px;
-=======
-    background-color: #1c4433;
-
-
-
->>>>>>> 6bc186efb36d0aa064a6bf07f673eaedc09dbb80
 }
 
 .button{
