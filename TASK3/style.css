@@ -15,7 +15,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #a0a0a0;
+    background: linear-gradient(to right, #f5bc41c1, #a48145, #a4965c, #ffffff);  
  }
 
 h2{
@@ -76,7 +76,7 @@ a{
 a:after{
     content: "";
     position: absolute;
-    background-color: #2e88db;
+    background: linear-gradient(to right, #edc619, #a48145, #a4965c, #ffffff);  
     height: 3px;
     width: 0;
     left: 0;
@@ -85,7 +85,9 @@ a:after{
 }
 
 a:hover{
-    color: #2e88db;
+    background: linear-gradient(to right, #edc619, #a48145, #a4965c, #ffffff);   
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 a:hover::after{
@@ -120,15 +122,15 @@ body{
     top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('https://www.freeworldmaps.net/printable/worldmap-countries-hd.jpg');
+    background-image: url('https://storage.googleapis.com/pod_public/1300/127222.jpg');
     background-size: 1000px 600px;
     
 }
   
 button{
     border: none;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: rgb(0, 0, 0);
+    background-color: #000000c7;
+    color: rgb(225, 186, 132);
     border-radius: 5px;
     font-size: 4vh;
     cursor: pointer;
@@ -172,8 +174,20 @@ button{
     align-items: flex-start;
     padding: 20px;
     box-sizing: border-box;
-    color: white;
+    color: black;
 
+}
+#population-size{
+    background-color: #000000c7;
+    color: rgb(225, 186, 132);
+}
+#mutation-rate{
+    background-color: #000000c7;
+    color: rgb(225, 186, 132);
+}
+#iteration-limit{
+    background-color: #000000c7;
+    color: rgb(225, 186, 132);
 }
   
 .main2 label {
