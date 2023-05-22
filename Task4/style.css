@@ -106,50 +106,59 @@ ul{
     font-size: 25px;
     font-weight: 700;
 }
-.control{
-    display: flexbox;
-    flex-direction: column;
-    line-height: 12px;
-    padding-left: 5%;
-    font-size: 8pt;
-    font-family: tahoma;
-    margin-top: 1px;
-    margin-right: 2px;
-    top:0;
-    right:0;
-    color: white;
+.top-right-list {
+    position: absolute;
+    top: 15%;
+    right: 10px;
+    list-style: 90px;
+    padding: 0;
+    background-color: rgba(128, 121, 121, 0.6);
+  }
+  
+  .top-right-list ul {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: #111;
+  }
+  
+  .top-right-list li {
+    margin-bottom: 5px;
+   
+  }
+  
+  .control {
+    width: 60px;
+    font: 40px;
+    color: #111;
+  }
   
 
-
-}
-
-#distance-label{
-    display: flexbox;
-    flex-direction: column;
-    line-height: 12px;
-    padding-left: 5%;
-    font-size: 8pt;
-    font-family: tahoma;
-    margin-top: 1px;
-    margin-right: 2px;
-    top:0;
-    right:0;
-    color: white;
-}
 .btn{
     position:relative;
     display:inline-block;
     padding: 25px 30px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #6D9886;
+    color: #918b8b;
     font-size: 1.2rem;
     font-weight: bold;
     transition: 0.5s;
     overflow: hidden;
     margin-right: 50 px;
     border: black;
+    cursor: pointer;
+    border-radius: 20px;
+}
 
+.button{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 9%;
+}
 
-
+#distance-label{
+    color: #111;
+    font-size: 25px;
 }
