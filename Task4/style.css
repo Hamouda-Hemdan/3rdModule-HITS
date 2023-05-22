@@ -35,6 +35,8 @@ h2{
 }
 
 header{
+    justify-content: space-between;
+    align-items: center;
     display: flex;
     flex-direction: row;
     background: black;
