@@ -117,7 +117,7 @@ ul{
     margin-left: auto;
     margin-right: auto;
     border-radius: 10%;
-    opacity: 0.4;
+    opacity: 0.6;
 } 
 
 .wrapper {
@@ -186,7 +186,6 @@ input{
     #canvas {
         margin-left: 250px;
         margin-right: 330px;
-        opacity: 0.6;
     }
 
     .button {
