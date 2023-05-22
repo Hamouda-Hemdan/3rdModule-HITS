@@ -102,3 +102,17 @@ ul{
     font-size: 25px;
     font-weight: 700;
 }
+
+@media (max-width: 980px){
+    header img{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        padding: 0px;
+        display:block;
+    }
+    header .end {
+        display: none;
+    }
+}
