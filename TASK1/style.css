@@ -197,3 +197,17 @@ button {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@media (max-width: 980px){
+    header img{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        padding: 0px;
+        display:block;
+    }
+    header .end {
+        display: none;
+    }
+}
+
