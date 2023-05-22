@@ -55,8 +55,8 @@ function createMapArray() {
 
     canvas = document.querySelector("canvas");
 
-    canvas.width = window.innerHeight - 175;
-    canvas.height = canvas.width;
+    canvas.width = window.innerHeight - 240;
+    canvas.height = canvas.width
 
     cellSide = Math.round(canvas.width / n);
     canvas.width = cellSide * n;
@@ -87,12 +87,9 @@ function addWalls() {
 function startPos(e) {
     painting = true;
 
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
-    var y = e.pageY - 145;
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
+    var y = e.pageY - 240;
 
-    console.log("pageX is at ", e.pageX);
-    console.log("canvas width is ", canvas.width);
-    console.log("user is at x= ", x, " and y= ", y);
 
     for (var i = 0; i < n; i++) {
         for (var j = 0; j < n; j++) {
@@ -138,8 +135,8 @@ function clickwalls(e) {
     if (!painting) return;
 
     //returns mouse position of user
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
-    var y = e.pageY - 145;
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
+    var y = e.pageY - 240;
 
     for (var i = 0; i < n; i++) {
         for (var j = 0; j < n; j++) {
@@ -186,8 +183,8 @@ function addStart() {
 //function that adds start position on canvas
 function clickStart(e) {
     //returns mouse position of user
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
-    var y = e.pageY - 145;
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
+    var y = e.pageY - 250;
 
     //searching for correspondant cell that user clicked
     for (var i = 0; i < n; i++) {
@@ -261,8 +258,8 @@ function addEnd() {
 //function that adds end position on canvas
 function clickEnd(e) {
     //returns mouse position of user
-    var x = e.pageX - (window.innerWidth - (canvas.width + 425));
-    var y = e.pageY - 145;
+    var x = e.pageX - (window.innerWidth - (canvas.width + 400));
+    var y = e.pageY - 240;
 
     //searching for correspondant cell that user clicked
     for (var i = 0; i < n; i++) {

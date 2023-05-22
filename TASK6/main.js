@@ -1,9 +1,3 @@
-/*
-resources "helped me in studying" :
-https://www.kaggle.com/wwsalmon/simple-mnist-nn-from-scratch-numpy-no-tf-keras
-https://leimao.github.io/blog/HTML-Canvas-Mouse-Touch-Drawing/
-*/
-
 var canvas;
 var Drawing = false;
 var canvas = document.querySelector("canvas");

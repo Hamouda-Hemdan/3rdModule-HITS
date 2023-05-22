@@ -10,7 +10,7 @@ let treeRoot = document.getElementById("root");
 function createTree() {
     treeRoot = removeTree();
     if(FILE.value === '') {
-        buildTree(getData(3));
+        buildTree(getData(1));
         drawTree(root, treeRoot);
     }
     else {

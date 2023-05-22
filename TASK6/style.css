@@ -6,6 +6,111 @@
     background-color: black;
 
 }
+.header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #111;
+    color: #fff;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000000;
+ }
+
+h2{
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+header{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 0 3px black;
+    font-family: 'Kanit', sans-serif;
+    padding: 5px 100px;
+/*     height: 110px; */
+}
+
+header .element {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0 10px;
+}
+
+header img{
+    width: 64px;
+    height: 64px;
+}
+
+header .end {
+    padding: 10px;
+    display: inherit;
+    margin-left: auto;
+}
+
+header .end img {
+    width: 48px;
+    height: 48px;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #a0a0a0;
+    letter-spacing: 0.5px;
+    
+}
+
+a:after{
+    content: "";
+    position: absolute;
+    background-color: greenyellow;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover{
+    color:greenyellow;
+}
+
+a:hover::after{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+.tasks_list{
+    padding: 15px;
+    display:flex;
+    gap: 4rem;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+body{
+    margin: 0;
+   
+}
+
 
 /* the cavnas "sketch" that we are going to draw our number in it */
 
@@ -15,7 +120,7 @@ canvas {
     width: 500px;
     height: 500px;
     left: 50%;
-    top: 50%;
+    top: 60%;
     margin-top: -250px;
     margin-left: -400px;
 }
@@ -68,3 +173,18 @@ canvas {
     color: greenyellow;
 
 }
+
+@media (max-width: 980px){
+    header img{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        padding: 0px;
+        display:block;
+    }
+    header .end {
+        display: none;
+    }
+}
+
