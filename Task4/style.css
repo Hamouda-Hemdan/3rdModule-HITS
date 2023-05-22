@@ -151,7 +151,18 @@ ul{
     overflow: hidden;
     margin-right: 50 px;
     border: black;
+}
 
-
-
+@media (max-width: 980px){
+    header img{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        padding: 0px;
+        display:block;
+    }
+    header .end {
+        display: none;
+    }
 }
