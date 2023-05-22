@@ -105,7 +105,7 @@ function centerImage(img) {
 
 //converts an RGBA image (represented as imgData, which is an object containing pixel data) to a grayscale image represented as a 2D array. 
 //It iterates over each pixel in the image and normalizes it to the range [0, 1]. 
-// why ? (https://www.isahit.com/blog/why-to-use-grayscale-conversion-during-image-processing#:~:text=Why%20is%20grayscale%20needed%20for,to%20its%20barest%20minimum%20pixel.)
+
 function imageToGrayscale(imgData) {
 
     var grayscaleImg = [];
