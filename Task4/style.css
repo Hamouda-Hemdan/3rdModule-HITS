@@ -111,7 +111,7 @@ ul{
     right: 10px;
     list-style: 90px;
     padding: 0;
-    background-color: rgba(128, 121, 121, 0.6);
+    background-color: #0d2c1f;
   }
   
   .top-right-list ul {
@@ -135,7 +135,7 @@ ul{
 
 .btn{
     position: relative;
-    height: 11%;
+    height: 5%;
     bottom:60%;
     flex-direction: column;
     align-items: flex-start;
@@ -148,7 +148,6 @@ ul{
     font-weight: bold;
     border: black;
     cursor: pointer;
-    border-radius: 20px;
 }
 
 .button{
