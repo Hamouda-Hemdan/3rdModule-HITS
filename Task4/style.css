@@ -1,7 +1,7 @@
 canvas {
     background-image: url('https://www.freeworldmaps.net/printable/worldmap-countries-hd.jpg');
     background-size: 1000px 600px ;
-    margin-left: 16%;
+    margin-left: 23%;
     
 }
 
@@ -108,7 +108,7 @@ ul{
 .top-right-list {
     position: absolute;
     top: 15%;
-    right: 10px;
+    right: 10%;
     list-style: 90px;
     padding: 0;
     background-color: #5b8976;
@@ -164,4 +164,32 @@ ul{
 #distance-label{
     color: #111;
     font-size: 25px;
+}
+
+@media (max-width: 980px){
+    header img{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        padding: 0px;
+        display:block;
+    }
+    header .end {
+        display: none;
+    }
+
+    .top-right-list {
+        top: 19%;
+        right: 76%;
+        list-style: 90px;
+        padding: 0;
+       
+      }
+      .button{
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 5.5%;
+        
+    }
 }
