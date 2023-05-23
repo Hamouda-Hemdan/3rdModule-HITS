@@ -24,15 +24,15 @@
             ["sunny",       "mild",         "normal",       "TRUE",     "yes"   ]
         ];
       
-//         data[1] = [
-//           ["Type",        "HP",        "Special",     "Action"         ],
-//           ["Electric",    "10",          "Yes",       "Psychic Strike" ],
-//           ["Electric",    "30",           "No",        "Pound"         ],
-//           ["Electric",    "40",           "Yes",       "Barrier"       ],
-//           ["Fire",        "10",           "Yes",       "Pound"         ],
-//           ["Fire",        "30",           "No",        "Tackle"        ],
-//           ["Water",       "10",           "No",        "Pound"         ],
-//           ["Water",       "40",           "No",        "Tackle"        ]
-//       ];
+        data[1] = [
+          ["Type",        "HP",        "Special",     "Action"         ],
+          ["Electric",    "10",          "Yes",       "Psychic Strike" ],
+          ["Electric",    "30",           "No",        "Pound"         ],
+          ["Electric",    "40",           "Yes",       "Barrier"       ],
+          ["Fire",        "10",           "Yes",       "Pound"         ],
+          ["Fire",        "30",           "No",        "Tackle"        ],
+          ["Water",       "10",           "No",        "Pound"         ],
+          ["Water",       "40",           "No",        "Tackle"        ]
+      ];
         return data[number]
       }
