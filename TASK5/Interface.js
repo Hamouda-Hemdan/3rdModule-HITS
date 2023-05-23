@@ -4,7 +4,7 @@ getFile_button.addEventListener('click', createTree);
 const FILE = document.getElementById('file_input');
 let flag = true;
 document.getElementById('input_data').value = "After deleting this message, write some attributes in commas and wihout spaces to make a decision. "
-buildTree(getData(1));
+buildTree(getData(0));
 let treeRoot = document.getElementById("root");
 
 function createTree() {
